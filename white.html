@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zebra Verde — Haute Maroquinerie · Handcrafted Leather Shoes &amp; Bags</title>
+<meta name="description" content="Zebra Verde — handcrafted leather shoes, bags and accessories made by Colombian master artisans since 2009. Art you can walk in.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ THEME TOKENS ============ */
+:root,[data-theme="dark"]{
+  --bg:#061B17; --hero-c:#0E3B33; --hero-m:#082520;
+  --surface:#0E3B33; --text:#E3E1D4; --strong:#F1ECDD; --muted:#B4C2BC; --faint:#8FA59D;
+  --line:#1F4A41; --accent:#D0B053; --accent-text:#D0B053; --em:#E6CF8E; --on-accent:#061B17;
+  --header:#E3E1D4; --logo:#E6CF8E;
+  --edit-bg:#E3E1D4; --edit-text:#2A3B36; --edit-title:#0E5148; --edit-em:#297232; --edit-label:#6B5A1F;
+  --scar-bg:#0E5148;
+  --foot-bg:#04130F; --foot-text:#B4C2BC; --foot-line:#143A33; --wordmark:#297232;
+  --p1:#D0B053; --p2:#E6CF8E; --p3:#297232; --p4:#3E8C4A; --p5:#F1ECDD;
+}
+[data-theme="light"]{
+  --bg:#FFFFFF; --hero-c:#F3F0E4; --hero-m:#FBFAF6;
+  --surface:#F4F2EA; --text:#2A3B36; --strong:#0E5148; --muted:#55655F; --faint:#6B7A75;
+  --line:#E2DFD3; --accent:#D0B053; --accent-text:#7D6318; --em:#7D6318; --on-accent:#061B17;
+  --header:#0E5148; --logo:#0E5148;
+  --edit-bg:#F4F2EA; --edit-text:#2A3B36; --edit-title:#0E5148; --edit-em:#297232; --edit-label:#6B5A1F;
+  --scar-bg:#0E5148;
+  --foot-bg:#F4F2EA; --foot-text:#4A5A55; --foot-line:#E2DFD3; --wordmark:#0E5148;
+  --p1:#C2A040; --p2:#297232; --p3:#0E5148; --p4:#3E8C4A; --p5:#D0B053;
+}
+
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Montserrat',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent-text)}
+button{font:inherit}
+:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+.serif{font-family:'Bodoni Moda',Didot,'Times New Roman',serif}
+.eyebrow{margin:0;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--accent-text);font-weight:400}
+.label{font-size:11px;letter-spacing:3.4px;text-transform:uppercase}
+.wrap{padding-left:56px;padding-right:56px}
+h1,h2,h3{margin:0;font-family:'Bodoni Moda',Didot,serif;font-weight:500;color:var(--strong)}
+em{font-style:italic;color:var(--em)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s cubic-bezier(.2,.7,.2,1),transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ HEADER ============ */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 56px;color:var(--header);transition:background .5s,padding .5s,backdrop-filter .5s}
+.header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.header nav,.header .tools{display:flex;align-items:center;flex:1 1 0;min-width:0}
+.header nav{gap:30px}
+.header .tools{gap:6px;justify-content:flex-end}
+.header .logo{font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:22px;letter-spacing:9px;padding-left:9px;color:var(--logo);white-space:nowrap}
+.icon-btn{background:none;border:0;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:inherit;cursor:pointer;gap:6px}
+.icon-btn svg{width:18px;height:18px}
+.bag-count{font-size:11px;color:var(--accent-text)}
+
+/* drawer menu */
+.drawer{position:fixed;inset:0;z-index:60;visibility:hidden}
+.drawer.open{visibility:visible}
+.drawer-scrim{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity .5s}
+.drawer.open .drawer-scrim{opacity:1}
+.drawer-panel{position:absolute;top:0;bottom:0;left:0;width:min(440px,92vw);background:var(--bg);border-right:1px solid var(--line);padding:28px 40px 40px;transform:translateX(-100%);transition:transform .6s cubic-bezier(.2,.7,.2,1);overflow-y:auto;display:flex;flex-direction:column;gap:28px}
+.drawer.open .drawer-panel{transform:none}
+.drawer-panel ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.drawer-panel li a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-family:'Bodoni Moda',Didot,serif;font-size:24px;color:var(--strong)}
+.drawer-panel li a:hover{color:var(--accent-text)}
+.drawer-panel .small a{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;border:0;padding:8px 0;color:var(--muted)}
+
+/* ============ HERO ============ */
+.hero{position:relative;height:100vh;min-height:680px;max-height:1100px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 45%,var(--hero-c) 0%,var(--hero-m) 45%,var(--bg) 80%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:28px;padding:0 20px}
+.hero h1{font-size:clamp(64px,13vw,210px);line-height:.9;letter-spacing:clamp(2px,.6vw,8px)}
+.hero .tag{margin:0;font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-size:clamp(20px,2.2vw,30px);color:var(--em)}
+.hero .pre{margin:0;font-size:11px;letter-spacing:6px;text-transform:uppercase}
+.scroll-cue{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);z-index:2;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--faint);display:flex;flex-direction:column;align-items:center;gap:14px}
+.scroll-cue span{width:1px;height:48px;background:linear-gradient(var(--accent),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ MANIFESTO ============ */
+.manifesto{padding:180px 56px 160px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:40px}
+.manifesto p.big{margin:0;max-width:1080px;font-family:'Bodoni Moda',Didot,serif;font-size:clamp(32px,4.4vw,64px);line-height:1.12;color:var(--strong)}
+.vline{display:block;width:1px;height:80px;background:var(--line)}
+
+/* ============ COLLECTION RAIL ============ */
+.collection{padding-bottom:160px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:48px;flex-wrap:wrap}
+.sec-head .titles{display:flex;flex-direction:column;gap:16px}
+.sec-head h2{font-size:clamp(40px,5vw,72px);line-height:1}
+.sec-head .ctrls{display:flex;gap:12px;align-items:center}
+.ulink{background-image:linear-gradient(var(--accent),var(--accent));background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:10px;transition:background-size .5s}
+.ulink:hover{background-size:40% 1px}
+.round{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s}
+.round:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.rail{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-left:56px;padding-right:56px;scroll-padding-inline:56px}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 clamp(280px,30vw,440px);scroll-snap-align:start;display:flex;flex-direction:column;gap:22px}
+.card .media{display:block;position:relative;aspect-ratio:4/5;overflow:hidden;background:#E3E1D4}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.05)}
+.card .chip{position:absolute;top:18px;left:18px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#061B17;background:rgba(244,242,234,.92);padding:7px 12px}
+.card .wish{position:absolute;top:10px;right:10px;color:#061B17}
+.card h3{font-size:26px;color:var(--em)}
+[data-theme="light"] .card h3{color:var(--strong)}
+.card p{margin:0}
+.card .desc{font-size:13px;line-height:1.6;color:var(--muted);margin-top:8px}
+.card .price{font-size:12px;letter-spacing:2px;margin-top:8px}
+
+/* ============ FULL-BLEED PIECE ============ */
+.piece{position:relative;height:100vh;min-height:640px;max-height:900px;overflow:hidden}
+.piece img{position:absolute;inset:0;width:100%;height:115%;object-fit:cover;will-change:transform}
+.piece .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,23,.5) 0%,rgba(6,27,23,0) 30%,rgba(6,27,23,0) 50%,rgba(6,27,23,.9) 100%)}
+.piece .cap{position:absolute;left:0;right:0;bottom:64px;display:flex;flex-direction:column;gap:18px;color:#E3E1D4}
+.piece .cap .eyebrow{color:#E6CF8E}
+.piece h2{font-size:clamp(56px,10vw,150px);line-height:.92;color:#F1ECDD}
+
+/* ============ SPLIT SECTIONS ============ */
+.split{display:flex;gap:96px;align-items:center;padding-top:180px;padding-bottom:180px}
+.split > *{flex:1 1 460px;min-width:0}
+.split .copy{display:flex;flex-direction:column;gap:32px}
+.split h2{font-size:clamp(44px,5.6vw,84px);line-height:1.02}
+.body{margin:0;max-width:480px;font-size:15px;line-height:1.85;color:var(--muted)}
+.specs{margin:12px 0 0;max-width:520px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.specs dt,.specs dd{margin:0;padding:18px 0;border-bottom:1px solid var(--line)}
+.specs dt{font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:var(--faint)}
+.specs dd{font-size:14px;color:var(--text)}
+.framed{position:relative}
+.framed img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.framed .quote{position:absolute;left:-32px;bottom:40px;margin:0;background:var(--bg);padding:22px 28px;font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-size:22px;color:var(--em);max-width:300px}
+
+/* ============ VARIANTS ============ */
+.variants{position:relative;padding:160px 20px 140px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;transition:background .9s}
+.variants h2{font-size:clamp(44px,7vw,108px);line-height:1}
+.variants .stage{width:min(560px,100%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;margin:24px 0}
+.variants .stage img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 40px 60px rgba(0,0,0,.35));transition:opacity .45s,transform .45s}
+.variants .stage img.swap{opacity:0;transform:scale(.96)}
+.pills{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.pill{min-height:48px;padding:0 30px;font-size:11px;letter-spacing:3.4px;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--text);border:1px solid color-mix(in srgb,var(--text) 35%,transparent);transition:all .3s}
+.pill[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:500}
+
+/* ============ EDITORIAL ============ */
+.editorial{background:var(--edit-bg);color:var(--edit-text);padding-top:160px;overflow:hidden}
+.editorial .eyebrow{color:var(--edit-label)}
+.editorial h2{font-size:clamp(60px,12vw,190px);line-height:.88;letter-spacing:-1px;color:var(--edit-title)}
+.editorial h2 em{color:var(--edit-em);padding-left:12vw}
+.editorial .row{display:flex;align-items:flex-end;margin-top:-40px}
+.editorial .row > *{flex:1 1 0;min-width:0}
+.editorial .fig{display:flex;justify-content:center}
+.editorial .fig img{width:min(520px,90%)}
+.editorial .txt{display:flex;flex-direction:column;gap:28px;padding:0 56px 120px}
+.editorial .txt .q{margin:0;font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-size:clamp(26px,2.6vw,38px);line-height:1.25;color:var(--edit-title)}
+.editorial .txt .b{margin:0;max-width:440px;font-size:15px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;font-size:11px;letter-spacing:3.4px;text-transform:uppercase;border:1px solid currentColor;transition:background .35s,color .35s,border-color .35s;cursor:pointer;background:transparent}
+.btn:hover{background:var(--accent);color:#061B17;border-color:var(--accent)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#061B17;font-weight:500}
+.btn.solid:hover{background:#E6CF8E;border-color:#E6CF8E}
+.editorial .btn{align-self:flex-start;color:var(--edit-title)}
+
+/* ============ SCARCITY ============ */
+.scarcity{padding:180px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:30px;background:var(--scar-bg);color:#E3E1D4}
+.scarcity .eyebrow{color:#E6CF8E}
+.scarcity .num{font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(120px,20vw,300px);line-height:.85;color:#F1ECDD;font-variant-numeric:lining-nums}
+.scarcity .sub{font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-size:30px;color:#E6CF8E}
+.scarcity .b{margin:0;max-width:460px;font-size:15px;line-height:1.8;color:#D4DDD8}
+.scarcity .acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.scarcity .btn{color:#E3E1D4}
+
+/* ============ CATEGORIES ============ */
+.cats{padding-top:170px;padding-bottom:150px;display:flex;flex-direction:column;gap:56px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.cat{display:flex;flex-direction:column;gap:18px}
+.cat .media{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.cat:hover img{transform:scale(1.05)}
+.cat .name{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:14px;font-family:'Bodoni Moda',Didot,serif;font-size:24px;color:var(--strong);transition:color .3s}
+.cat:hover .name{color:var(--accent-text)}
+.cat .name span{color:var(--accent-text);font-size:18px}
+
+/* ============ SERVICES ============ */
+.services{border-top:1px solid var(--line);padding-top:110px;padding-bottom:110px;display:flex;flex-direction:column;gap:56px}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px}
+.srv h3{font-size:26px}
+.srv p{margin:14px 0;font-size:14px;line-height:1.75;color:var(--muted)}
+.srv a{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-text)}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--foot-bg);color:var(--foot-text);padding-top:110px}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:56px}
+.foot-col{display:flex;flex-direction:column;gap:14px;font-size:13px}
+.foot-col h3{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent-text);font-weight:400;margin-bottom:6px}
+.foot-col p{margin:0;line-height:1.8}
+.foot-col .strong{font-size:14px;color:var(--text)}
+.news{display:flex;border-bottom:1px solid var(--accent)}
+.news input{flex:1;min-width:0;background:transparent;border:0;color:var(--text);font:inherit;font-size:14px;padding:12px 0}
+.news input::placeholder{color:var(--faint)}
+.news button{background:none;border:0;color:var(--accent-text);width:44px;height:44px;cursor:pointer;font-size:18px}
+.socials{display:flex;gap:8px;margin-top:8px}
+.socials a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.foot-base{margin-top:110px;border-top:1px solid var(--foot-line);padding:60px 20px 28px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.foot-base .mark{margin:0;font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(54px,11.5vw,176px);line-height:.9;letter-spacing:clamp(4px,1.2vw,18px);color:var(--wordmark)}
+.foot-base .fine{margin:0;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--faint)}
+.foot-base .copy{margin:0;font-size:11px;color:var(--faint)}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:900px){
+  .wrap,.manifesto{padding-left:20px;padding-right:20px}
+  .header{padding-left:16px;padding-right:16px}
+  .header .logo{font-size:16px;letter-spacing:5px}
+  .hide-m{display:none !important}
+  .rail{padding-left:20px;padding-right:20px;gap:18px;scroll-padding-inline:20px}
+  .card{flex-basis:78vw}
+  .split{flex-direction:column;gap:56px;padding-top:110px;padding-bottom:110px}
+  .split > *{flex:auto;width:100%}
+  .split.rev .framed{order:-1}
+  .framed .quote{left:12px;bottom:12px;font-size:18px}
+  .editorial .row{flex-direction:column;margin-top:24px}
+  .editorial .txt{padding:40px 20px 90px}
+  .editorial h2 em{padding-left:0}
+  .manifesto{padding-top:120px;padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .card img,.cat img{transition:none}
+  .scroll-cue span{animation:none}
+}
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <nav aria-label="Primary">
+    <button class="icon-btn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false" id="menuBtn" style="justify-content:flex-start">
+      <svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="width:26px;height:14px"><path d="M0 1h26M0 13h18"/></svg>
+    </button>
+    <a class="label hide-m" href="#collection">Women</a>
+    <a class="label hide-m" href="#collection">Men</a>
+    <a class="label hide-m" href="#categories">Leather Goods</a>
+  </nav>
+  <a class="logo" href="#top" aria-label="Zebra Verde — home">ZEBRA VERDE</a>
+  <div class="tools">
+    <a class="label hide-m" href="#contact" style="margin-right:14px">Contact</a>
+    <button class="icon-btn" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l6 6"/></svg></button>
+    <a class="icon-btn hide-m" href="#wishlist" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg></a>
+    <a class="icon-btn hide-m" href="#account" aria-label="My ZV account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></a>
+    <a class="icon-btn" href="#bag" aria-label="Shopping bag, 0 items"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count" id="bagCount">0</span></a>
+  </div>
+</header>
+
+<!-- ============ DRAWER MENU ============ -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-scrim" data-close></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="icon-btn" type="button" aria-label="Close menu" data-close style="align-self:flex-start;margin-left:-12px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <ul>
+      <li><a href="#collection" data-close>Women</a></li>
+      <li><a href="#collection" data-close>Men</a></li>
+      <li><a href="#categories" data-close>Bags &amp; Small Leather Goods</a></li>
+      <li><a href="#services" data-close>Gifts &amp; Personalization</a></li>
+      <li><a href="#categories" data-close>Home, Lifestyle &amp; Library</a></li>
+      <li><a href="#services" data-close>Services</a></li>
+      <li><a href="#heritage" data-close>La Maison</a></li>
+    </ul>
+    <ul class="small">
+      <li><a href="#contact" data-close>Find a Distributor — LATAM · USA · EU · China</a></li>
+      <li><a href="#contact" data-close>Sustainability</a></li>
+      <li><a href="#contact" data-close>Contact us</a></li>
+    </ul>
+  </aside>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-label="Zebra Verde">
+  <canvas id="stripes" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="pre">Haute Maroquinerie · Colombia</p>
+    <h1>ZEBRA<br>VERDE</h1>
+    <p class="tag">Art you can walk in.</p>
+  </div>
+  <a class="scroll-cue" href="#maison">Scroll to discover<span></span></a>
+</section>
+
+<!-- ============ I · MANIFESTO ============ -->
+<section class="manifesto" id="maison">
+  <p class="eyebrow reveal">I · The Maison</p>
+  <p class="big reveal">For completely different and significant people. Every pair is born from expert hands, honest leather and a <em>colour</em> that refuses to whisper.</p>
+  <span class="vline" aria-hidden="true"></span>
+</section>
+
+<!-- ============ II · COLLECTION ============ -->
+<section class="collection" id="collection" aria-labelledby="col-title">
+  <div class="sec-head wrap">
+    <div class="titles reveal">
+      <p class="eyebrow">II · The Collection</p>
+      <h2 id="col-title">The Season</h2>
+    </div>
+    <div class="ctrls">
+      <a class="label ulink" href="#collection" style="margin-right:20px">Discover the collection ↗</a>
+      <button class="round" type="button" aria-label="Previous pieces" data-rail="-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="round" type="button" aria-label="Next pieces" data-rail="1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="rail" id="rail">
+    <article class="card">
+      <a class="media" href="#product"><img src="assets/boots-maroon.webp" alt="Bordeaux knee-high leather boots" style="object-position:30% 50%" loading="lazy"><span class="chip">New season</span></a>
+      <div><h3><a href="#product">Bordeaux Knee Boot</a></h3><p class="desc">Hand-burnished calfskin, sculpted block heel</p><p class="price">[PRICE] USD</p></div>
+    </article>
+    <article class="card">
+      <a class="media" href="#product"><img src="assets/boot-cutout.webp" alt="Black knee-high stiletto boot" style="object-fit:contain;padding:24px" loading="lazy"><span class="chip">Classic</span></a>
+      <div><h3><a href="#product">Noir Stiletto Boot</a></h3><p class="desc">Polished black leather, slim stiletto line</p><p class="price">[PRICE] USD</p></div>
+    </article>
+    <article class="card">
+      <a class="media" href="#product"><img src="assets/green-grid.webp" alt="Shoes and boots photographed on emerald green" style="object-position:50% 30%" loading="lazy"><span class="chip">Collection</span></a>
+      <div><h3><a href="#product">The Emerald Edit</a></h3><p class="desc">Sandals, heels and boots in the house colours</p><p class="price">From [PRICE] USD</p></div>
+    </article>
+    <article class="card">
+      <a class="media" href="#product"><img src="assets/boots-craft.webp" alt="Leather riding boots in black and cognac" style="object-position:35% 50%" loading="lazy"><span class="chip">Atelier</span></a>
+      <div><h3><a href="#product">Atelier Riding Boot</a></h3><p class="desc">Two-tone leather, hand-stitched shaft</p><p class="price">[PRICE] USD</p></div>
+    </article>
+    <article class="card">
+      <a class="media" href="#product"><img src="assets/boots-maroon.webp" alt="Bordeaux leather ankle boot" style="object-position:85% 50%" loading="lazy"><span class="chip">Limited</span></a>
+      <div><h3><a href="#product">Bordeaux Ankle Boot</a></h3><p class="desc">Soft calfskin, almond toe</p><p class="price">[PRICE] USD</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ FINISHED PIECE ============ -->
+<section class="piece" aria-label="The finished piece">
+  <img id="parallax" src="assets/boots-maroon.webp" alt="Hand-burnished bordeaux leather boots" loading="lazy">
+  <div class="shade" aria-hidden="true"></div>
+  <div class="cap wrap reveal">
+    <p class="eyebrow">The finished piece</p>
+    <h2>Hand Crafted</h2>
+    <p class="label" style="margin:0;letter-spacing:4px">Calfskin · Hand-stitched · Made in Colombia</p>
+  </div>
+</section>
+
+<!-- ============ III · CRAFTSMANSHIP ============ -->
+<section class="split wrap" aria-labelledby="craft-title">
+  <div class="copy reveal">
+    <p class="eyebrow">III · Craftsmanship</p>
+    <h2 id="craft-title">They are not merely hands; they are <em>tools of the soul.</em></h2>
+    <p class="body">Each pair begins on a wooden last and passes through the hands of Colombian master shoemakers — traditional atelier techniques, high-quality leathers and meticulous attention to detail.</p>
+    <dl class="specs">
+      <dt>Leather</dt><dd>[Leather type]</dd>
+      <dt>Construction</dt><dd>Hand-lasted, hand-stitched</dd>
+      <dt>Finish</dt><dd>[Finish]</dd>
+      <dt>Atelier</dt><dd>Colombia, since 2009</dd>
+    </dl>
+  </div>
+  <div class="framed reveal">
+    <img src="assets/lasts-red.webp" alt="Two wooden shoe lasts on red cloth" loading="lazy">
+    <p class="quote">“Art and wisdom are the perfect description.”</p>
+  </div>
+</section>
+
+<!-- ============ IV · VARIANTS ============ -->
+<section class="variants" id="variants" aria-labelledby="var-title">
+  <p class="eyebrow">IV · Variants</p>
+  <h2 id="var-title" class="reveal">One silhouette, three moods</h2>
+  <p class="body" id="varCopy" style="max-width:520px">Emerald — the house colour. Deep, vivid and unmistakably Zebra Verde.</p>
+  <div class="stage"><img id="varImg" src="assets/green-grid.webp" alt="The season’s pieces photographed on emerald green"></div>
+  <div class="pills" role="group" aria-label="Choose a colour">
+    <button class="pill" type="button" aria-pressed="true" data-variant="emerald">Emerald</button>
+    <button class="pill" type="button" aria-pressed="false" data-variant="bordeaux">Bordeaux</button>
+    <button class="pill" type="button" aria-pressed="false" data-variant="noir">Noir</button>
+  </div>
+</section>
+
+<!-- ============ V · EDITORIAL ============ -->
+<section class="editorial" aria-labelledby="ed-title">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:20px">
+    <p class="eyebrow">V · The Art of the Unprecedented</p>
+    <h2 id="ed-title" class="reveal">Born<br><em>bold.</em></h2>
+  </div>
+  <div class="row">
+    <div class="fig"><img src="assets/zebra-turban.webp" alt="Editorial: zebra-headed figure in a red ruffled blouse" loading="lazy"></div>
+    <div class="txt reveal">
+      <p class="q">“The Art of the Unprecedented and the Unthought.”</p>
+      <p class="b">We don’t follow trends — we reinterpret them. Colour is not an accessory here; it is a language. Every Zebra Verde piece is a stamp of freedom, colour and beauty.</p>
+      <a class="btn" href="#heritage">Read our story ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCARCITY ============ -->
+<section class="scarcity" aria-labelledby="sc-title">
+  <p class="eyebrow">Limited atelier edition</p>
+  <p id="sc-title" style="margin:0;display:flex;flex-direction:column;align-items:center;gap:6px">
+    <span class="num" id="count" data-to="121">121</span>
+    <span class="sub">pairs only remain</span>
+  </p>
+  <p class="b">For completely different and significant people. Once this edition is gone, its lasts are retired.</p>
+  <div class="acts">
+    <a class="btn solid" href="#reserve">Reserve your pair</a>
+    <a class="btn" href="#appointment">Arrange a private appointment</a>
+  </div>
+</section>
+
+<!-- ============ VI · CATEGORIES ============ -->
+<section class="cats wrap" id="categories" aria-labelledby="cat-title">
+  <div class="reveal" style="display:flex;flex-direction:column;gap:16px">
+    <p class="eyebrow">VI · The Maison’s World</p>
+    <h2 id="cat-title" style="font-size:clamp(40px,5vw,72px);line-height:1">Shop by category</h2>
+  </div>
+  <div class="cat-grid">
+    <a class="cat reveal" href="#categories"><div class="media"><img src="assets/boots-craft.webp" alt="Women’s leather boots" style="object-position:30% 50%" loading="lazy"></div><div class="name">Women’s Shoes <span aria-hidden="true">↗</span></div></a>
+    <a class="cat reveal" href="#categories"><div class="media"><img src="assets/green-grid.webp" alt="Leather bags and shoes on green" style="object-position:50% 80%" loading="lazy"></div><div class="name">Women’s Bags <span aria-hidden="true">↗</span></div></a>
+    <a class="cat reveal" href="#categories"><div class="media"><img src="assets/zebra-woman.webp" alt="Editorial: zebra-headed figure in a striped coat" style="object-position:50% 20%" loading="lazy"></div><div class="name">Leather Accessories <span aria-hidden="true">↗</span></div></a>
+    <a class="cat reveal" href="#categories"><div class="media"><img src="assets/lasts-red.webp" alt="Wooden shoe lasts on red cloth" loading="lazy"></div><div class="name">Leather Goods <span aria-hidden="true">↗</span></div></a>
+  </div>
+</section>
+
+<!-- ============ VII · HERITAGE ============ -->
+<section class="split wrap rev" id="heritage" aria-labelledby="her-title" style="padding-top:120px">
+  <div class="framed reveal" style="background:#8C1C1C"><img src="assets/zebra-red.webp" alt="Editorial: zebra portrait on red" loading="lazy"></div>
+  <div class="copy reveal">
+    <p class="eyebrow">VII · Heritage</p>
+    <h2 id="her-title" style="font-size:clamp(40px,5vw,76px);line-height:1.04">It began with a pair of <em>pink patent</em> ballet flats.</h2>
+    <p class="body">A childhood gift, outgrown and given away — and a country where brightly coloured shoes were hard to find. Years later, studying in Buenos Aires, our founder spent her nights learning to craft shoes and handbags. In 2009 she returned to Colombia and founded Zebra Verde.</p>
+    <p class="serif" style="margin:0;font-style:italic;font-size:26px;color:var(--em)">Every step will be yours.</p>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services wrap" id="services" aria-labelledby="srv-title">
+  <h2 id="srv-title" class="eyebrow" style="font-family:'Montserrat',sans-serif">Zebra Verde Services</h2>
+  <div class="srv-grid">
+    <div class="srv reveal"><h3>Client Advisors</h3><p>Wherever you are, our advisors will be delighted to offer personalized guidance — by phone, email or WhatsApp.</p><a href="#contact">Discover ↗</a></div>
+    <div class="srv reveal"><h3>Personalization</h3><p>Initials, colourways and finishes made for one person only.</p><a href="#services">Discover ↗</a></div>
+    <div class="srv reveal"><h3>Repairs</h3><p>Every pair returns to the atelier hands that made it, for care that lasts.</p><a href="#services">Discover ↗</a></div>
+    <div class="srv reveal"><h3>The Art of Gifting</h3><p>Signature packaging and a hand-written note, delivered with ceremony.</p><a href="#services">Discover ↗</a></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="foot-grid wrap">
+    <div class="foot-col">
+      <h3>Help</h3>
+      <p>A Client Advisor is available Monday to Friday, 10 am – 7 pm (COT).</p>
+      <a class="strong" href="tel:+573114826090">+57 311 482 6090</a>
+      <a class="strong" href="https://wa.me/573114826090">WhatsApp</a>
+      <a class="strong" href="mailto:latinamerica@contact.zebraverde.com" style="word-break:break-all;font-size:13px">latinamerica@contact.zebraverde.com</a>
+      <a href="#faq">FAQ</a>
+      <a href="#care">Product Care</a>
+      <a href="#distributors">Find a Distributor</a>
+    </div>
+    <div class="foot-col">
+      <h3>Services</h3>
+      <a href="#repairs">Repairs</a>
+      <a href="#personalization">Personalization</a>
+      <a href="#gifting">The Art of Gifting</a>
+      <a href="#apps">Download our Apps</a>
+    </div>
+    <div class="foot-col">
+      <h3>About Zebra Verde</h3>
+      <a href="#shows">Fashion Shows</a>
+      <a href="#culture">Arts &amp; Culture</a>
+      <a href="#maison">La Maison</a>
+      <a href="#sustainability">Sustainability</a>
+      <a href="#news">Latest News</a>
+      <a href="#ethics">Ethics &amp; Compliance</a>
+      <a href="#careers">Careers</a>
+    </div>
+    <form class="foot-col" id="newsForm" novalidate>
+      <h3>Receive our letters</h3>
+      <p>Sign up for Zebra Verde emails and be first to hear of exclusive online pre-launches and new collections.</p>
+      <label for="zv-email" class="label" style="font-size:10px;color:var(--faint);margin-top:6px">Email address</label>
+      <div class="news">
+        <input id="zv-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" aria-label="Subscribe">→</button>
+      </div>
+      <p id="newsMsg" role="status" style="font-size:12px;color:var(--accent-text);min-height:18px"></p>
+      <div class="socials">
+        <a href="#instagram" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+        <a href="#facebook" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a>
+        <a href="#tiktok" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.5 5 4.8"/></svg></a>
+      </div>
+    </form>
+  </div>
+  <div class="foot-base">
+    <p class="mark" aria-hidden="true">ZEBRA VERDE</p>
+    <p class="fine">Maison Zebra Verde · Haute Maroquinerie · LATAM · USA · EU · China</p>
+    <p class="copy">© 2026 Zebra Verde. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var css = function(v){ return getComputedStyle(root).getPropertyValue(v).trim(); };
+
+  /* ---------- header on scroll ---------- */
+  var header = document.getElementById('header');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 40); };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- drawer ---------- */
+  var drawer = document.getElementById('drawer'), menuBtn = document.getElementById('menuBtn');
+  function setDrawer(open){
+    drawer.classList.toggle('open', open);
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) drawer.querySelector('[data-close]').focus(); else menuBtn.focus();
+  }
+  menuBtn.addEventListener('click', function(){ setDrawer(true); });
+  drawer.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click', function(){ setDrawer(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
+
+  /* ---------- reveal on scroll ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* ---------- collection rail ---------- */
+  var rail = document.getElementById('rail');
+  document.querySelectorAll('[data-rail]').forEach(function(b){
+    b.addEventListener('click', function(){
+      rail.scrollBy({left: (+b.dataset.rail) * Math.max(320, rail.clientWidth * .6), behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+
+  /* ---------- parallax on the finished piece ---------- */
+  var par = document.getElementById('parallax');
+  if (!reduce && par){
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function(){
+        var r = par.parentNode.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight){ par.style.transform = 'translateY(' + (-(r.top / innerHeight) * 60 - 60) + 'px)'; }
+        ticking = false;
+      });
+    }, {passive:true});
+  }
+
+  /* ---------- variants ---------- */
+  var light = root.getAttribute('data-theme') === 'light';
+  var V = {
+    emerald:  { img:'assets/green-grid.webp',   alt:'The season’s pieces photographed on emerald green',
+                copy:'Emerald — the house colour. Deep, vivid and unmistakably Zebra Verde.',
+                bg: light ? 'radial-gradient(ellipse at 50% 60%,#E3EEE8 0%,#F3F7F4 50%,#FFFFFF 85%)' : 'radial-gradient(ellipse at 50% 60%,#12594C 0%,#0A3A32 45%,#061B17 85%)' },
+    bordeaux: { img:'assets/boots-maroon.webp', alt:'Bordeaux leather boots',
+                copy:'Bordeaux — burnished by hand until the leather holds the last colour of dusk.',
+                bg: light ? 'radial-gradient(ellipse at 50% 60%,#F3E3E6 0%,#FAF3F4 50%,#FFFFFF 85%)' : 'radial-gradient(ellipse at 50% 60%,#4A1622 0%,#2A0D15 45%,#120609 85%)' },
+    noir:     { img:'assets/boot-cutout.webp',  alt:'Black knee-high stiletto boot',
+                copy:'Noir — the classic, sharpened. A line drawn once, with intent.',
+                bg: light ? 'radial-gradient(ellipse at 50% 55%,#ECECE8 0%,#F7F7F5 50%,#FFFFFF 85%)' : 'radial-gradient(ellipse at 50% 55%,#3B3F3A 0%,#1A1C1A 45%,#0A0B0A 85%)' }
+  };
+  var vSec = document.getElementById('variants'), vImg = document.getElementById('varImg'), vCopy = document.getElementById('varCopy');
+  function setVariant(k){
+    var v = V[k];
+    vSec.style.background = v.bg;
+    document.querySelectorAll('[data-variant]').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.variant === k ? 'true' : 'false'); });
+    vImg.classList.add('swap');
+    setTimeout(function(){ vImg.src = v.img; vImg.alt = v.alt; vCopy.textContent = v.copy; vImg.classList.remove('swap'); }, reduce ? 0 : 380);
+  }
+  document.querySelectorAll('[data-variant]').forEach(function(b){ b.addEventListener('click', function(){ setVariant(b.dataset.variant); }); });
+  vSec.style.background = V.emerald.bg;
+
+  /* ---------- scarcity counter ---------- */
+  var count = document.getElementById('count');
+  if (!reduce){
+    var cio = new IntersectionObserver(function(es){
+      if (!es[0].isIntersecting) return; cio.disconnect();
+      var to = +count.dataset.to, from = 980, t0 = performance.now(), d = 2200;
+      (function tick(now){ var p = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - p, 4);
+        count.textContent = Math.round(from + (to - from) * e); if (p < 1) requestAnimationFrame(tick); })(t0);
+    }, {threshold:.5});
+    cio.observe(count);
+  }
+
+  /* ---------- newsletter (front-end only, connect to ESP/back-end) ---------- */
+  document.getElementById('newsForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var inp = document.getElementById('zv-email'), msg = document.getElementById('newsMsg');
+    msg.textContent = inp.checkValidity() ? 'Thank you — welcome to La Maison.' : 'Please enter a valid email address.';
+  });
+
+  /* ---------- hero: zebra stripes made of particles ---------- */
+  var cv = document.getElementById('stripes'), ctx = cv.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2), W = 0, H = 0, pts = [], mouse = {x:-9999, y:-9999};
+  var palette = [css('--p1'), css('--p1'), css('--p2'), css('--p3'), css('--p4'), css('--p5')];
+  var alphaBoost = light ? 1.15 : .85;
+  function build(){
+    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.round(Math.min(2600, W * H / 520)); pts = [];
+    for (var i = 0; i < n; i++) pts.push({
+      stripe: Math.floor(Math.random() * 14), t: Math.random(), off: (Math.random() - .5) * 26,
+      sp: .00012 + Math.random() * .00028, s: Math.random() < .04 ? 2.2 : .5 + Math.random() * 1.1,
+      c: palette[Math.floor(Math.random() * palette.length)], a: .25 + Math.random() * .6, dx: 0, dy: 0
+    });
+  }
+  function pos(p, time){
+    var gap = W / 11, baseX = -gap * 1.5 + p.stripe * gap, y = p.t * (H + 200) - 100;
+    var bend = Math.sin(y / 180 + p.stripe * .9 + time * .00025) * 46 + Math.sin(y / 70 + p.stripe) * 10;
+    return [baseX + y * .32 + bend + p.off, y];
+  }
+  var last = performance.now(), visible = true;
+  function frame(now){
+    var dt = Math.min(48, now - last); last = now;
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < pts.length; i++){
+      var p = pts[i];
+      if (!reduce){ p.t += p.sp * dt * .06; if (p.t > 1) p.t -= 1; }
+      var xy = pos(p, now), x = xy[0], y = xy[1];
+      var mx = x - mouse.x, my = y - mouse.y, d2 = mx * mx + my * my;
+      if (d2 < 22000){ var f = (22000 - d2) / 22000; p.dx += mx * f * .06; p.dy += my * f * .06; }
+      p.dx *= .92; p.dy *= .92; x += p.dx; y += p.dy;
+      var fade = Math.min(1, y / 120, (H - y) / 160); if (fade <= 0) continue;
+      ctx.globalAlpha = Math.min(1, p.a * fade * alphaBoost); ctx.fillStyle = p.c; ctx.fillRect(x, y, p.s, p.s);
+    }
+    ctx.globalAlpha = 1;
+    if (!reduce && visible) requestAnimationFrame(frame);
+  }
+  build();
+  window.addEventListener('resize', build);
+  cv.parentNode.addEventListener('pointermove', function(e){ var r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+  cv.parentNode.addEventListener('pointerleave', function(){ mouse.x = mouse.y = -9999; });
+  new IntersectionObserver(function(es){
+    var was = visible; visible = es[0].isIntersecting;
+    if (visible && !was && !reduce){ last = performance.now(); requestAnimationFrame(frame); }
+  }).observe(cv);
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
