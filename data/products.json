@@ -1,0 +1,180 @@
+{
+  "currency": "COP",
+  "imageBase": "https://zebraverde.com/wp-content/uploads/",
+  "categories": [
+    { "id": "boots", "name": "Boots" },
+    { "id": "ankle-boots", "name": "Ankle Boots" },
+    { "id": "ballerinas", "name": "Ballerinas" },
+    { "id": "bags", "name": "Bags" }
+  ],
+  "products": [
+    {
+      "id": "danielle", "wcId": 750, "sku": "BOTCDANI", "slug": "danielle-croc-embossed-boot",
+      "name": "Danielle", "title": "Croc-Embossed Knee Boot", "category": "boots", "price": 1289000,
+      "badge": "Signature",
+      "short": "Danielle pairs leather with a lavish croc-embossed finish. A slim silhouette drawn in curving lines — wear it with fluid dresses or your favourite denim.",
+      "details": ["100% Argentine croc-embossed leather", "Lining in 100% Colombian leather", "Padded insole in 100% Colombian leather", "Rubber sole", "Heel 8.5 cm (includes 1.5 cm platform)", "Weight 1,230 g", "Made in Colombia"],
+      "care": "leather",
+      "options": { "Color": ["Brown", "Honey", "Black"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/DANIELLE-BROWN-BOOTS-FRONT", ".jpg", "768x1152", "1024x1536", "Brown"],
+        ["2026/03/DANIELLE-BROWN-UPPER2", ".jpg", "768x1152", "1024x1536", "Brown"],
+        ["2026/03/DANIELLE-BROWN-BOOTS-BACK", ".jpg", "768x512", "1024x683", "Brown"],
+        ["2026/03/DANIELLE-BROWN-BOOTS-UPPER-3", ".jpg", "768x512", "1024x683", "Brown"],
+        ["2026/03/DANIELLE-HONEY-BOOT-LATERAL", ".jpg", "768x1366", null, "Honey"],
+        ["2026/03/DANIELLE-HONEY-BOOT-BACK", ".jpg", "768x1366", null, "Honey"],
+        ["2026/03/DANIELLE-BLACK-BOOT-LATERAL", ".jpg", "768x1366", null, "Black"]
+      ]
+    },
+    {
+      "id": "amora", "wcId": 749, "sku": "BOTCAMO", "slug": "amora-suede-patent-boot",
+      "name": "Amora", "title": "Suede & Patent Knee Boot", "category": "boots", "price": 1199000,
+      "badge": "Star of the collection",
+      "short": "The star of the collection. The softness of suede meets the shine of patent leather for a beautifully refined silhouette.",
+      "details": ["100% Brazilian suede and Colombian patent leather", "Lining in 100% Colombian leather", "Padded insole in 100% Colombian leather", "EVA sole", "Heel 8.5 cm (includes 1.5 cm platform)", "Weight 1,250 g", "Made in Colombia"],
+      "care": "suede-patent",
+      "options": { "Color": ["Burgundy", "Black"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/01/AMORA-BURGUNDY-UPPER", ".jpg", "768x1152", "1024x1536", "Burgundy"],
+        ["2026/01/AMORA-BURGUNDY-UPFRONT", ".jpg", "768x512", "1024x683", "Burgundy"],
+        ["2026/01/AMORA-BURGUNDY-BOOTS-BACK", ".jpg", "768x512", "1024x683", "Burgundy"],
+        ["2026/01/AMORA-BURGUNDY-HEEL", ".jpg", "768x512", "1024x683", "Burgundy"],
+        ["2026/03/AMORA-BLACK-BOOT-LATERAL-e1773171932995", ".jpg", "768x924", null, "Black"],
+        ["2026/03/AMORA-BLACK-BOOT-BACK-copy", ".jpg", "768x1366", null, "Black"]
+      ]
+    },
+    {
+      "id": "cordelia", "wcId": 775, "sku": "BOPLCOR", "slug": "cordelia-fold-over-boot",
+      "name": "Cordelia", "title": "Fold-Over Collar Boot", "category": "boots", "price": 1199000,
+      "badge": "Two ways to wear",
+      "short": "Croc-embossed leather boots made to be worn two ways: fold the collar down to reveal calf hair touched with gold foil, or zip them up and let the strap do the talking.",
+      "details": ["100% Argentine croc-embossed leather", "Lining in 100% Colombian leather", "Gold-tone metal back zip", "Padded insole in 100% Colombian leather", "Rubber sole", "Heel 8.5 cm (includes 1.5 cm platform)", "Weight 1,325 g", "Made in Colombia"],
+      "care": "leather",
+      "options": { "Color": ["Brown", "Black calf hair"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/OLIVIA-BROWN-BOOT-FLAT-LATERAL-e1773171838657", ".jpg", "768x491", "1024x654", "Brown"],
+        ["2026/03/OLIVIA-BROWN-BOOT-FLAT-LATERAL-3", ".jpg", "768x1366", null, "Brown"],
+        ["2026/03/OLIVIA-BROWN-BOOT-FLAT-LATERAL2", ".jpg", "768x1366", null, "Brown"],
+        ["2026/03/OLIVIA-BROWN-BOOT-FLAT-BACK", ".jpg", "768x432", "1024x576", "Brown"]
+      ]
+    },
+    {
+      "id": "charlotte", "wcId": 722, "sku": "BTTCCHA", "slug": "charlotte-two-tone-ankle-boot",
+      "name": "Charlotte", "title": "Two-Tone Ankle Boot", "category": "ankle-boots", "price": 899000,
+      "short": "Casual and comfortable. Charlotte joins the softness of Colombian suede with the beauty of Argentine croc-embossed leather.",
+      "details": ["Chocolate suede with croc-embossed leather, or Argentine black nappa", "Lining in 100% Colombian leather", "Padded insole in 100% Colombian leather", "Heel 8.5 cm (includes 1.5 cm platform)", "Weight 865 g", "Made in Colombia"],
+      "care": "suede-patent",
+      "options": { "Color": ["Honey & Brown", "Black & Bronze"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/CHARLOTTE-CHOCOLATTE-UPPER6", ".jpg", "768x512", "1024x683", "Honey & Brown"],
+        ["2026/03/CHARLOTTE-CHOCOLATE-LATERAL", ".jpg", "768x512", "1024x683", "Honey & Brown"],
+        ["2026/03/CHARLOTTE-CHOCOLATTE-ZIPPER", ".jpg", "768x512", "1024x683", "Honey & Brown"],
+        ["2026/03/CHARLOTTE", ".jpg", "768x512", "1024x683", null],
+        ["2026/01/CHARLOTTE-BLACKBRONZE-BOOTIES-FRONT", ".jpg", "768x512", "1024x683", "Black & Bronze"],
+        ["2026/01/CHARLOTTE-BLACKBRONZE-BOOTIES-LATERAL-e1769009615312", ".jpg", "768x524", "1024x699", "Black & Bronze"],
+        ["2026/01/CHARLOTTE-BLACKBRONZE", ".jpg", "768x512", "1024x683", "Black & Bronze"],
+        ["2026/01/CHARLOTTE-BLACK-BRONZE-BOOTIES-LATERAL-3", ".jpg", "768x512", "1024x683", "Black & Bronze"]
+      ]
+    },
+    {
+      "id": "eloise", "wcId": 696, "sku": "BT3040ELO", "slug": "eloise-v-cut-ankle-boot",
+      "name": "Eloise", "title": "V-Cut Flat Ankle Boot", "category": "ankle-boots", "price": 779000,
+      "priceByColor": { "Gold & black calf hair": 819000 },
+      "short": "Cut from Argentine leather and finished with delicate studs, Eloise is made for modern, easy looks.",
+      "details": ["100% Argentine leather", "Black-silver studs", "Lining in 100% Colombian leather", "Padded insole in 100% Colombian leather", "Rubber sole", "Heel 3.8 cm", "Weight 670 g", "Made in Colombia"],
+      "care": "leather",
+      "options": { "Color": ["Black with studs", "Gold & black calf hair"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/ELOISE-BLACK-STUDS-BOOTIES-UPPER2-e1773846868330", ".jpg", "768x551", "1024x734", "Black with studs"],
+        ["2026/03/ELOISE-BLACK-STUDS-BOOTIES-LATERAL2", ".jpg", "768x512", "1024x683", "Black with studs"],
+        ["2026/03/ELOISE-BLACK-STUDS-BOOTIES-LATERAL-3", ".jpg", "768x512", "1024x683", "Black with studs"],
+        ["2026/03/ELOISE-BLACK-STUDS-BOOTIES-BACK", ".jpg", "768x512", "1024x683", "Black with studs"],
+        ["2026/03/ELOISE-BLACK-STUDS-BOOTIES-UPPER", ".jpg", "768x512", "1024x683", "Black with studs"],
+        ["2026/03/ELOISE-BLACK-GOLD-BOOTIES-UPPER", ".jpg", "768x512", "1024x683", "Gold & black calf hair"],
+        ["2026/03/ELOISE-BLACKGOLD-BOOTIES-LATERAL", ".jpg", "768x512", "1024x683", "Gold & black calf hair"],
+        ["2026/03/ELOISE-BLACKGOLD-BOOTIES-BACK-LATERAL", ".jpg", "768x512", "1024x683", "Gold & black calf hair"],
+        ["2026/03/ELOISE-BLACKGOLD-BOOTIES-BACK", ".jpg", "768x512", "1024x683", "Gold & black calf hair"]
+      ]
+    },
+    {
+      "id": "avery", "wcId": 655, "sku": "FLMPAVE", "slug": "avery-calf-hair-ballerina",
+      "name": "Avery", "title": "Open Calf-Hair Ballerina", "category": "ballerinas", "price": 659000,
+      "short": "Crafted in Colombian leather, with a side opening that brings a sophisticated note to any look. The play of textures makes it joyful — for special occasions and for every day.",
+      "details": ["Colombian calf-hair leather", "Side opening", "Padded insole in 100% Colombian leather", "Made in Colombia"],
+      "care": "calf-hair",
+      "options": { "Color": ["Rose gold calf hair", "Violet calf hair"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/AVERIE-GOLD-ROSE-FLATS-UPPER-2", ".jpg", "768x512", "1024x683", "Rose gold calf hair"],
+        ["2026/03/AVERIE-ROSE-GOLD-UPPER", ".jpg", "768x512", "1024x683", "Rose gold calf hair"],
+        ["2026/03/AVERIE-GOLD-ROSE-FLATS-LATERAL", ".jpg", "768x512", "1024x683", "Rose gold calf hair"],
+        ["2026/03/AVERIE-GOLD-ROSE-FLATS-BACK2", ".jpg", "768x512", "1024x683", "Rose gold calf hair"],
+        ["2026/03/AVERIE-DARK-VIOLET-FLATS-UPPER", ".jpg", "768x512", "1024x683", "Violet calf hair"],
+        ["2026/03/AVERIE-DARK-VIOLET-FLATS-UPPER3", ".jpg", "768x512", "1024x683", "Violet calf hair"],
+        ["2026/03/AVERIE-DARK-VIOLET-FLATS-BACK", ".jpg", "768x512", "1024x683", "Violet calf hair"],
+        ["2026/03/AVERIE-DARK-VIOLET-CLOSE", ".jpg", "768x512", "1024x683", "Violet calf hair"]
+      ]
+    },
+    {
+      "id": "ava", "wcId": 530, "sku": "15647", "slug": "ava-bow-ballerina",
+      "name": "Ava", "title": "Open Ballerina with Bow", "category": "ballerinas", "price": 599000,
+      "short": "Argentine leather with a side opening and a front bow in Argentine foil. A refined silhouette for special occasions and for every day.",
+      "details": ["100% Argentine leather", "Bow in Argentine foil leather", "Lining in 100% Colombian leather", "Padded insole in 100% Colombian leather", "EVA sole", "Heel 1.5 cm", "Weight 535 g", "Made in Colombia"],
+      "care": "leather",
+      "options": { "Color": ["Gold", "Black"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/AVA-WHITE-GOLD-FLATS-UPPER2", ".jpg", "768x512", "1024x683", "Gold"],
+        ["2026/03/AVA-GOLD-WHITE-UPPER", ".jpg", "768x512", "1024x683", "Gold"],
+        ["2026/03/AVA-WHITE-GOLD-FLATS-LATERAL", ".jpg", "768x512", "1024x683", "Gold"],
+        ["2026/03/AVA-BLACK-FLATS-BOW", ".jpg", "768x512", "1024x683", "Black"],
+        ["2026/03/AVA-BLACK-FLATS-LATERAL", ".jpg", "768x512", "1024x683", "Black"],
+        ["2026/03/AVA-BLACK-FLATS-UPPER-BACK", ".jpg", "768x512", "1024x683", "Black"],
+        ["2026/03/AVA-BLACK-FLATS-UPPER", ".jpg", "768x512", "1024x683", "Black"]
+      ]
+    },
+    {
+      "id": "genevieve", "wcId": 656, "sku": "FLFCGEN", "slug": "genevieve-fringed-ballerina",
+      "name": "Genevieve", "title": "Fringed Open Ballerina", "category": "ballerinas", "price": 599000,
+      "short": "An easy-to-wear yet glamorous ballerina, finished with a fringe. Comfortable, and undeniably stylish.",
+      "details": ["100% Argentine leather", "Fringe in cream calf leather", "Lining in 100% Colombian sheepskin", "Padded insole in 100% Colombian sheepskin", "Pointed toe", "EVA sole", "Heel 1.5 cm", "Weight 545 g", "Made in Colombia"],
+      "care": "leather",
+      "options": { "Color": ["Brown", "Black"], "Size": ["35", "36", "37", "38", "39", "40", "41"] },
+      "images": [
+        ["2026/03/GENEVIEVE-BROWN-DIAG", ".jpg", "768x432", "1024x576", "Brown"],
+        ["2026/03/GENEVIEVE-BROWN-FRONT", ".jpg", "768x432", "1024x576", "Brown"],
+        ["2026/03/GENEVIEVE-BROWN-LATERAL", ".jpg", "768x432", "1024x576", "Brown"],
+        ["2026/03/GENEVIEVE-BROWN-UPPERSIDE", ".jpg", "768x432", "1024x576", "Brown"]
+      ]
+    },
+    {
+      "id": "natalie", "wcId": 803, "sku": "CRHNAT28PGR", "slug": "natalie-croc-tote",
+      "name": "Natalie", "title": "Croc-Embossed Tote", "category": "bags", "price": 1166200,
+      "short": "Generous enough to carry everything you need, with an inner pocket for your phone and small essentials.",
+      "details": ["100% croc-embossed leather", "Lined in Colombian sheepskin", "Inner pocket", "Made in Colombia"],
+      "care": "calf-hair-bag",
+      "options": { "Color": ["Brown", "Black calf hair"], "Size": ["Large"] },
+      "images": [
+        ["2026/03/NATALIE-BROWN-TOTE-BAG-2", ".jpg", "768x960", null, "Brown"],
+        ["2026/03/NATALIE-BLACKGOLD-TOTE-BAG-2", ".jpg", "768x960", null, "Black calf hair"]
+      ]
+    },
+    {
+      "id": "colette", "wcId": 828, "sku": "CRTBCOL17PQ", "slug": "colette-mini-tote",
+      "name": "Colette", "title": "Calf-Hair Mini Tote", "category": "bags", "price": 609280,
+      "short": "Our Colette mini tote has just the right shine to go everywhere with you. Carry it by hand, or on the shoulder strap.",
+      "details": ["Calf-hair leather", "Removable short and long straps", "H 21 × W 5 × D 18 cm", "Made in Colombia"],
+      "care": "calf-hair-bag",
+      "options": { "Color": ["Rose gold & beige calf hair", "Violet & beige calf hair", "Black calf hair"], "Size": ["Small"] },
+      "images": [
+        ["2026/03/COLETTE-GOLD-ROSE2-MINI-TOTE", ".jpg", "768x960", null, "Rose gold & beige calf hair"],
+        ["2026/03/COLETTE-DARK-VIOLET-MINI-TOTE", ".jpg", "768x960", null, "Violet & beige calf hair"],
+        ["2026/03/COLLETE-BLACKGOLD-MINI-TOTE", ".jpg", "768x960", null, "Black calf hair"]
+      ]
+    }
+  ],
+  "care": {
+    "leather": ["Clean gently with a soft cloth; for a deeper clean, a slightly damp cloth is enough.", "Nourish every 2–3 months with a leather conditioner to keep it supple.", "Keep away from strong sun so colour and texture last.", "If it gets wet, let it air-dry naturally, away from direct heat.", "Store in a velvet or cloth bag, in a cool, ventilated place."],
+    "suede-patent": ["Brush suede with a suede brush.", "Wipe patent details with a soft, slightly damp cloth.", "Keep away from strong sun so colour and texture last.", "If wet, blot with a dry cloth and let it air-dry naturally, away from direct heat.", "Store in a velvet or cloth bag, in a cool, ventilated place."],
+    "calf-hair": ["Brush gently with a soft brush, always in the direction of the hair.", "For a small mark, use a clean white eraser or a suede brush, then brush the hair back.", "If wet, blot with a towel and let it dry naturally. Keep out of the sun.", "Store in a dry place, in a velvet or cloth bag."],
+    "calf-hair-bag": ["Brush gently with a soft brush, always in the direction of the hair.", "For a small mark, use a clean white eraser or a suede brush, then brush the hair back.", "Store in a velvet or cloth bag, in a cool, ventilated place."]
+  }
+}

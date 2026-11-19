@@ -1,0 +1,58 @@
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="header{{HEADER_CLASS}}" id="header">
+  <nav aria-label="Primary">
+    <button class="icon-btn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false" id="menuBtn" style="justify-content:flex-start">
+      <svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="width:26px;height:14px"><path d="M0 1h26M0 13h18"/></svg>
+    </button>
+    <a class="label hide-m" href="{{R}}shop/">Shop</a>
+    <a class="label hide-m" href="{{R}}shop/#boots">Boots</a>
+    <a class="label hide-m" href="{{R}}shop/#ballerinas">Ballerinas</a>
+    <a class="label hide-m" href="{{R}}shop/#bags">Bags</a>
+  </nav>
+  <a class="logo" href="{{R}}" aria-label="Zebra Verde — home">ZEBRA VERDE</a>
+  <div class="tools">
+    <a class="label hide-m" href="#contact" style="margin-right:14px">Contact</a>
+    <a class="icon-btn" href="{{R}}shop/" aria-label="Search the collection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l6 6"/></svg></a>
+    <a class="icon-btn" href="{{R}}bag/" aria-label="Shopping bag" data-bag-link><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count" data-bag-count>0</span></a>
+  </div>
+</header>
+
+<!-- ============ DRAWER MENU ============ -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-scrim" data-close></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="icon-btn" type="button" aria-label="Close menu" data-close style="align-self:flex-start;margin-left:-12px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <ul>
+      <li><a href="{{R}}shop/" data-close>The Collection</a></li>
+      <li><a href="{{R}}shop/#boots" data-close>Boots</a></li>
+      <li><a href="{{R}}shop/#ankle-boots" data-close>Ankle Boots</a></li>
+      <li><a href="{{R}}shop/#ballerinas" data-close>Ballerinas</a></li>
+      <li><a href="{{R}}shop/#bags" data-close>Bags</a></li>
+      <li><a href="{{R}}#heritage" data-close>La Maison</a></li>
+    </ul>
+    <ul class="small">
+      <li><a href="{{R}}bag/" data-close>Your bag</a></li>
+      <li><a href="#contact" data-close>Client Advisors</a></li>
+      <li><a href="#contact" data-close>Contact us</a></li>
+    </ul>
+  </aside>
+</div>
+
+<!-- ============ MINI BAG (slides in after "Add to bag") ============ -->
+<div class="drawer drawer-right" id="miniBag" aria-hidden="true">
+  <div class="drawer-scrim" data-close-bag></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="miniBagTitle">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <p class="eyebrow" id="miniBagTitle">Added to your bag</p>
+      <button class="icon-btn" type="button" aria-label="Close" data-close-bag><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    </div>
+    <div id="miniBagItems" class="mini-items"></div>
+    <div class="mini-total"><span class="label">Subtotal</span><span id="miniBagTotal" class="serif" style="font-size:22px;color:var(--strong)"></span></div>
+    <a class="btn solid" href="{{R}}checkout/">Proceed to checkout</a>
+    <a class="btn" href="{{R}}bag/" style="color:var(--text)">View bag</a>
+  </aside>
+</div>
