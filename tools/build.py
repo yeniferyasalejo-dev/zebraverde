@@ -104,14 +104,14 @@ def build_home():
     body = rd('src/home-body.html')
     rail = '\n'.join(
         f'''    <article class="card">
-      <a class="media plinth" href="shop/{p['slug']}/"><img src="{img(p['images'][0])}" alt="{E(p['name'] + ' — ' + p['title'])}" style="object-fit:contain;padding:8%;mix-blend-mode:multiply" loading="lazy">{f'<span class="chip">{E(p["badge"])}</span>' if p.get('badge') else ''}</a>
+      <a class="media plinth" href="shop/{p['slug']}/"><img src="{img(p['images'][0])}" alt="{E(p['name'] + ' — ' + p['title'])}" style="object-fit:cover" loading="lazy">{f'<span class="chip">{E(p["badge"])}</span>' if p.get('badge') else ''}</a>
       <div><h3><a href="shop/{p['slug']}/">{E(p['name'])}</a></h3><p class="desc">{E(p['title'])}</p><p class="price">{from_price(p)}</p></div>
     </article>''' for p in P)
     pick = {}
     for p in P:
         pick.setdefault(p['category'], p)
     cats = '\n'.join(
-        f'''    <a class="cat reveal" href="shop/#{cid}"><div class="media plinth"><img src="{img(pick[cid]['images'][0])}" alt="{E(CATS[cid])}" style="object-fit:contain;padding:8%" loading="lazy"></div><div class="name">{E(CATS[cid])} <span aria-hidden="true">↗</span></div></a>'''
+        f'''    <a class="cat reveal" href="shop/#{cid}"><div class="media plinth"><img src="{img(pick[cid]['images'][0])}" alt="{E(CATS[cid])}" style="object-fit:cover" loading="lazy"></div><div class="name">{E(CATS[cid])} <span aria-hidden="true">↗</span></div></a>'''
         for cid in CATS if cid in pick)
     body = body.replace('{{RAIL}}', rail).replace('{{CATS}}', cats)
     for theme, out in (('dark', 'index.html'), ('light', 'white.html')):
