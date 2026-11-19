@@ -11,7 +11,7 @@ Product pages are plain HTML (good for SEO); the bag and checkout run in the bro
 In the next step data/products.json will be refreshed from Google Sheets and this
 script re-run automatically (GitHub Action).
 """
-import json, html, os, shutil
+import json, html, os, shutil, hashlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = 'https://yeniferyasalejo-dev.github.io/zebraverde/'
@@ -31,6 +31,11 @@ DATA = json.loads(rd('data/products.json'))
 P = DATA['products']
 CATS = {c['id']: c['name'] for c in DATA['categories']}
 HEADER, FOOTER = rd('src/partials/header.html'), rd('src/partials/footer.html')
+
+
+def v(p):
+    return hashlib.md5(rd(p).encode()).hexdigest()[:8]
+
 
 
 def money(n):
@@ -72,7 +77,7 @@ def page(path, title, desc, body, page_id, theme='dark', header_solid=True, extr
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}assets/css/zv.css">
+<link rel="stylesheet" href="{r}assets/css/zv.css?v={v('assets/css/zv.css')}">
 {extra_head}</head>
 <body data-page="{page_id}">
 {head}
@@ -80,8 +85,8 @@ def page(path, title, desc, body, page_id, theme='dark', header_solid=True, extr
 {body}
 </main>
 {foot}
-<script src="{r}assets/js/config.js"></script>
-<script src="{r}assets/js/store.js"></script>
+<script src="{r}assets/js/config.js?v={v('assets/js/config.js')}"></script>
+<script src="{r}assets/js/store.js?v={v('assets/js/store.js')}"></script>
 {extra_js}</body>
 </html>
 '''
@@ -118,7 +123,7 @@ def build_home():
         wr(out, page(out, 'Zebra Verde — Haute Maroquinerie · Handcrafted Leather Shoes & Bags',
                      'Zebra Verde — handcrafted leather boots, ballerinas and bags made by Colombian master artisans since 2009. Art you can walk in.',
                      body, 'home', theme=theme, header_solid=False,
-                     extra_js='<script src="assets/js/home.js"></script>\n',
+                     extra_js=f'<script src="assets/js/home.js?v={v("assets/js/home.js")}"></script>\n',
                      canonical='' if out == 'index.html' else 'white.html'))
 
 
